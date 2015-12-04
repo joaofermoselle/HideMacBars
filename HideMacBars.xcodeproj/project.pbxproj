@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CFEBBB9F1C120B1200889C8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEBBB9E1C120B1200889C8E /* AppDelegate.swift */; };
+		CFEBBBA11C120B1200889C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFEBBBA01C120B1200889C8E /* Assets.xcassets */; };
+		CFEBBBA41C120B1200889C8E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFEBBBA21C120B1200889C8E /* MainMenu.xib */; };
+		CFEBBBAF1C120B1200889C8E /* HideMacBarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEBBBAE1C120B1200889C8E /* HideMacBarsTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFEBBBAB1C120B1200889C8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFEBBB931C120B1200889C8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFEBBB9A1C120B1200889C8E;
+			remoteInfo = HideMacBars;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CFEBBB9B1C120B1200889C8E /* HideMacBars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HideMacBars.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFEBBB9E1C120B1200889C8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CFEBBBA01C120B1200889C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFEBBBA31C120B1200889C8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		CFEBBBA51C120B1200889C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFEBBBAA1C120B1200889C8E /* HideMacBarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HideMacBarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFEBBBAE1C120B1200889C8E /* HideMacBarsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideMacBarsTests.swift; sourceTree = "<group>"; };
+		CFEBBBB01C120B1200889C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFEBBB981C120B1200889C8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFEBBBA71C120B1200889C8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CFEBBB921C120B1200889C8E = {
+			isa = PBXGroup;
+			children = (
+				CFEBBB9D1C120B1200889C8E /* HideMacBars */,
+				CFEBBBAD1C120B1200889C8E /* HideMacBarsTests */,
+				CFEBBB9C1C120B1200889C8E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CFEBBB9C1C120B1200889C8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFEBBB9B1C120B1200889C8E /* HideMacBars.app */,
+				CFEBBBAA1C120B1200889C8E /* HideMacBarsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFEBBB9D1C120B1200889C8E /* HideMacBars */ = {
+			isa = PBXGroup;
+			children = (
+				CFEBBB9E1C120B1200889C8E /* AppDelegate.swift */,
+				CFEBBBA01C120B1200889C8E /* Assets.xcassets */,
+				CFEBBBA21C120B1200889C8E /* MainMenu.xib */,
+				CFEBBBA51C120B1200889C8E /* Info.plist */,
+			);
+			path = HideMacBars;
+			sourceTree = "<group>";
+		};
+		CFEBBBAD1C120B1200889C8E /* HideMacBarsTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFEBBBAE1C120B1200889C8E /* HideMacBarsTests.swift */,
+				CFEBBBB01C120B1200889C8E /* Info.plist */,
+			);
+			path = HideMacBarsTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFEBBB9A1C120B1200889C8E /* HideMacBars */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFEBBBB31C120B1200889C8E /* Build configuration list for PBXNativeTarget "HideMacBars" */;
+			buildPhases = (
+				CFEBBB971C120B1200889C8E /* Sources */,
+				CFEBBB981C120B1200889C8E /* Frameworks */,
+				CFEBBB991C120B1200889C8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HideMacBars;
+			productName = HideMacBars;
+			productReference = CFEBBB9B1C120B1200889C8E /* HideMacBars.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CFEBBBA91C120B1200889C8E /* HideMacBarsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFEBBBB61C120B1200889C8E /* Build configuration list for PBXNativeTarget "HideMacBarsTests" */;
+			buildPhases = (
+				CFEBBBA61C120B1200889C8E /* Sources */,
+				CFEBBBA71C120B1200889C8E /* Frameworks */,
+				CFEBBBA81C120B1200889C8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFEBBBAC1C120B1200889C8E /* PBXTargetDependency */,
+			);
+			name = HideMacBarsTests;
+			productName = HideMacBarsTests;
+			productReference = CFEBBBAA1C120B1200889C8E /* HideMacBarsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFEBBB931C120B1200889C8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = JRFS;
+				TargetAttributes = {
+					CFEBBB9A1C120B1200889C8E = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					CFEBBBA91C120B1200889C8E = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = CFEBBB9A1C120B1200889C8E;
+					};
+				};
+			};
+			buildConfigurationList = CFEBBB961C120B1200889C8E /* Build configuration list for PBXProject "HideMacBars" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFEBBB921C120B1200889C8E;
+			productRefGroup = CFEBBB9C1C120B1200889C8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFEBBB9A1C120B1200889C8E /* HideMacBars */,
+				CFEBBBA91C120B1200889C8E /* HideMacBarsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFEBBB991C120B1200889C8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFEBBBA11C120B1200889C8E /* Assets.xcassets in Resources */,
+				CFEBBBA41C120B1200889C8E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFEBBBA81C120B1200889C8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFEBBB971C120B1200889C8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFEBBB9F1C120B1200889C8E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFEBBBA61C120B1200889C8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFEBBBAF1C120B1200889C8E /* HideMacBarsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CFEBBBAC1C120B1200889C8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFEBBB9A1C120B1200889C8E /* HideMacBars */;
+			targetProxy = CFEBBBAB1C120B1200889C8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CFEBBBA21C120B1200889C8E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFEBBBA31C120B1200889C8E /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CFEBBBB11C120B1200889C8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CFEBBBB21C120B1200889C8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CFEBBBB41C120B1200889C8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HideMacBars/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrfs.HideMacBars;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CFEBBBB51C120B1200889C8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HideMacBars/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrfs.HideMacBars;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CFEBBBB71C120B1200889C8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HideMacBarsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrfs.HideMacBarsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HideMacBars.app/Contents/MacOS/HideMacBars";
+			};
+			name = Debug;
+		};
+		CFEBBBB81C120B1200889C8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HideMacBarsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrfs.HideMacBarsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HideMacBars.app/Contents/MacOS/HideMacBars";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFEBBB961C120B1200889C8E /* Build configuration list for PBXProject "HideMacBars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFEBBBB11C120B1200889C8E /* Debug */,
+				CFEBBBB21C120B1200889C8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFEBBBB31C120B1200889C8E /* Build configuration list for PBXNativeTarget "HideMacBars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFEBBBB41C120B1200889C8E /* Debug */,
+				CFEBBBB51C120B1200889C8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CFEBBBB61C120B1200889C8E /* Build configuration list for PBXNativeTarget "HideMacBarsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFEBBBB71C120B1200889C8E /* Debug */,
+				CFEBBBB81C120B1200889C8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFEBBB931C120B1200889C8E /* Project object */;
+}
