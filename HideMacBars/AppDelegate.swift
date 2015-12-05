@@ -7,11 +7,19 @@
 //
 
 import Cocoa
+import CoreFoundation
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    
+    // ---------------------
+    // MARK: Properties
+    // ---------------------
+    
     @IBOutlet weak var window: NSWindow!
+    
+    let preferencesPath = "/Users/Joao/Library/Preferences/.GlobalPreferences.plist"
     
     // Create new status bar item
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
@@ -20,15 +28,47 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // TODO: Read plist to figure out the status
     var status: Status = .ShowAll
 
+    
 
+    // ---------------------
+    // MARK: App start
+    // ---------------------
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        
+        // Check what the current status is.
+        status = currentStatus()
+        print(status)
         
         if let button = statusItem.button {
             button.image = NSImage(named: "ShowAll")
             button.action = Selector("toggleBars:")
         }
         
+        guard let dict = NSDictionary(contentsOfFile: preferencesPath) else {
+            print("Couldn't open plist")
+            return
+        }
+        
+        print("Could open plist!")
+        //print(dict)
+        
     }
+    
+    
+    
+    // ---------------------
+    // MARK: Methods
+    // ---------------------
+    
+    func currentStatus() -> Status {
+        if NSUserDefaults.standardUserDefaults().boolForKey("_HIHideMenuBar") {
+            return .MenuHidden
+        } else {
+            return .ShowAll
+        }
+    }
+    
     
     func toggleBars(sender: AnyObject) {
         
@@ -38,9 +78,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if status == .ShowAll {
             button.image = NSImage(named: "MenuHidden")
             status = .MenuHidden
+            
+            // Hide menu
         } else {
             button.image = NSImage(named: "ShowAll")
             status = .ShowAll
+            
+            // Show menu
         }
         
     }
@@ -48,6 +92,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 // The possible states of the application
+// Made as enum because I want to allow for the Dock to be hidden in the future
 enum Status {
     case ShowAll
     case MenuHidden
