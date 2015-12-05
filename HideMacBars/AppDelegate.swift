@@ -40,10 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         status = currentStatus()
         print(status)
         
-        if let button = statusItem.button {
-            button.image = NSImage(named: "ShowAll")
-            button.action = Selector("toggleBars:")
-        }
+        initIcon()
         
         guard let dict = NSDictionary(contentsOfFile: preferencesPath) else {
             print("Couldn't open plist")
@@ -70,22 +67,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     
+    func initIcon() {
+        statusItem.button!.action = Selector("toggleBars:")
+        updateIcon()
+    }
+    
+    func updateIcon() {
+        statusItem.button!.image = NSImage(named: status.rawValue)
+    }
+    
+    
     func toggleBars(sender: AnyObject) {
         
         let button = sender as! NSStatusBarButton
         
         // Toggle the status and change the icon image
         if status == .ShowAll {
-            button.image = NSImage(named: "MenuHidden")
             status = .MenuHidden
             
             // Hide menu
         } else {
-            button.image = NSImage(named: "ShowAll")
             status = .ShowAll
             
             // Show menu
         }
+        
+        updateIcon()
         
     }
 
@@ -93,8 +100,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 // The possible states of the application
 // Made as enum because I want to allow for the Dock to be hidden in the future
-enum Status {
-    case ShowAll
-    case MenuHidden
+enum Status: String {
+    case ShowAll = "ShowAll"
+    case MenuHidden = "MenuHidden"
 }
 
