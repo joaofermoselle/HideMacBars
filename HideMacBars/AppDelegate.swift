@@ -12,16 +12,44 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
+    
+    // Create new status bar item
+    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
+    
+    // Set initial status
+    // TODO: Read plist to figure out the status
+    var status: Status = .ShowAll
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        
+        if let button = statusItem.button {
+            button.image = NSImage(named: "ShowAll")
+            button.action = Selector("toggleBars:")
+        }
+        
+    }
+    
+    func toggleBars(sender: AnyObject) {
+        
+        let button = sender as! NSStatusBarButton
+        
+        // Toggle the status and change the icon image
+        if status == .ShowAll {
+            button.image = NSImage(named: "MenuHidden")
+            status = .MenuHidden
+        } else {
+            button.image = NSImage(named: "ShowAll")
+            status = .ShowAll
+        }
+        
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
-    }
+}
 
-
+// The possible states of the application
+enum Status {
+    case ShowAll
+    case MenuHidden
 }
 
