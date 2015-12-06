@@ -6,6 +6,7 @@
 //  Copyright © 2015 JRFS. All rights reserved.
 //
 
+import AppKit
 import Cocoa
 import CoreFoundation
 
@@ -22,6 +23,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // Create new status bar item
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
     
+    // Create a menu for the app
+    let menu = NSMenu()
+    
     var status: Status = .ShowAll
 
     
@@ -37,6 +41,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Initialise the menu bar button with the correct icon.
         initIcon()
+        
+        // Add items to menu
+        menu.addItem(NSMenuItem(title: "Print Quote", action: Selector("printQuote:"), keyEquivalent: "P"))
+        //menu.addItem(NSMenuItem.separatorItem())
+        menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
+        
+        //statusItem.menu = menu
         
     }
     
@@ -67,6 +78,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     */
     func initIcon() {
         statusItem.button!.action = Selector("toggleBars:")
+        statusItem.button!.sendActionOn(Int(NSEventMask.LeftMouseUpMask.rawValue)|Int(NSEventMask.RightMouseUpMask.rawValue))
         updateIcon()
     }
     
@@ -86,6 +98,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         in the future.
     */
     func toggleBars(sender: AnyObject) {
+        
+        let event = NSApplication.sharedApplication().currentEvent!
+        
+        let isRightClick = event.type == NSEventType.RightMouseUp
+        let isControlClick = Int(event.modifierFlags.rawValue) & Int(NSEventModifierFlags.ControlKeyMask.rawValue) != 0
+        
+        // If right-click or Ctrl+click
+        if (isRightClick || isControlClick) {
+            statusItem.popUpStatusItemMenu(menu)
+            return
+        }
         
         if status == .ShowAll {
             status = .MenuHidden
