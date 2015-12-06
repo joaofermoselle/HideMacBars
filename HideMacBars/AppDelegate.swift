@@ -64,6 +64,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func updateIcon() {
         statusItem.button!.image = NSImage(named: status.rawValue)
+        statusItem.button!.image?.template = true
     }
     
     
