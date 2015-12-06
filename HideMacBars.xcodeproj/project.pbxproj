@@ -372,6 +372,7 @@
 				CFEBBBB51C120B1200889C8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFEBBBB61C120B1200889C8E /* Build configuration list for PBXNativeTarget "HideMacBarsTests" */ = {
 			isa = XCConfigurationList;
@@ -380,6 +381,7 @@
 				CFEBBBB81C120B1200889C8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
