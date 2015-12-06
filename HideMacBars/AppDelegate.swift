@@ -24,8 +24,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // Create new status bar item
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
     
-    // Set initial status
-    // TODO: Read plist to figure out the status
     var status: Status = .ShowAll
 
     
@@ -41,14 +39,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         print(status)
         
         initIcon()
-        
-        guard let dict = NSDictionary(contentsOfFile: preferencesPath) else {
-            print("Couldn't open plist")
-            return
-        }
-        
-        print("Could open plist!")
-        //print(dict)
         
     }
     
@@ -79,17 +69,46 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func toggleBars(sender: AnyObject) {
         
-        let button = sender as! NSStatusBarButton
-        
         // Toggle the status and change the icon image
         if status == .ShowAll {
             status = .MenuHidden
             
-            // Hide menu
+//            CFPreferencesSetValue("_HIHideMenuBar", true, kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost)
+            
+            // Load .GlobalPreferences.plist to an array
+            guard let prefArrayTemp = NSUserDefaults.standardUserDefaults().persistentDomainForName(NSGlobalDomain) else {
+                print("Could not read .GlobalPreferences.plist")
+                return
+            }
+            
+            var prefArray = prefArrayTemp
+            prefArray.updateValue(true, forKey: "_HIHideMenuBar")
+            NSUserDefaults.standardUserDefaults().setPersistentDomain(prefArray, forName: NSGlobalDomain)
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), "AppleInterfaceMenuBarHidingChangedNotification", nil, nil, true)
+            }
+            
         } else {
+            
             status = .ShowAll
             
-            // Show menu
+            // Load .GlobalPreferences.plist to an array
+            guard let prefArrayTemp = NSUserDefaults.standardUserDefaults().persistentDomainForName(NSGlobalDomain) else {
+                print("Could not read .GlobalPreferences.plist")
+                return
+            }
+            
+            var prefArray = prefArrayTemp
+            prefArray.updateValue(false, forKey: "_HIHideMenuBar")
+            NSUserDefaults.standardUserDefaults().setPersistentDomain(prefArray, forName: NSGlobalDomain)
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), "AppleInterfaceMenuBarHidingChangedNotification", nil, nil, true)
+            }
+            
         }
         
         updateIcon()
