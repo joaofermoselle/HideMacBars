@@ -38,6 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Check what the current status is and update the variable.
         status = currentStatus()
+        print(status)
         
         // Initialise the menu bar button with the correct icon.
         initIcon()
@@ -61,7 +62,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         - Returns: Current status of the visibility of the system menu bar.
     */
     func currentStatus() -> Status {
-        if NSUserDefaults.standardUserDefaults().boolForKey("_HIHideMenuBar") {
+        
+        // Load .GlobalPreferences.plist to a dictionary.
+        guard let preferencesDict = NSUserDefaults.standardUserDefaults().persistentDomainForName(NSGlobalDomain) else {
+            print("Could not read .GlobalPreferences.plist")
+            return .ShowAll
+        }
+        
+        if preferencesDict["_HIHideMenuBar"] as! Bool {
             return .MenuHidden
         } else {
             return .ShowAll
@@ -149,15 +157,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     */
     func setMenuHidingKey(bool: Bool) -> Bool {
         
-        // Load .GlobalPreferences.plist to an array
-        guard let prefArrayTemp = NSUserDefaults.standardUserDefaults().persistentDomainForName(NSGlobalDomain) else {
+        // Load .GlobalPreferences.plist to a dictionary
+        guard let preferencesDictTemp = NSUserDefaults.standardUserDefaults().persistentDomainForName(NSGlobalDomain) else {
             print("Could not read .GlobalPreferences.plist")
             return false
         }
         
-        var prefArray = prefArrayTemp
-        prefArray.updateValue(bool, forKey: "_HIHideMenuBar")
-        NSUserDefaults.standardUserDefaults().setPersistentDomain(prefArray, forName: NSGlobalDomain)
+        var preferencesDict = preferencesDictTemp
+        preferencesDict.updateValue(bool, forKey: "_HIHideMenuBar")
+        NSUserDefaults.standardUserDefaults().setPersistentDomain(preferencesDict, forName: NSGlobalDomain)
         
         return true
         
