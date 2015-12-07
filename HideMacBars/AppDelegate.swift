@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  HideMacBars
 //
-//  Created by JRFS on 04/12/2015.
+//  Created by Joao Fermoselle on 04/12/2015.
 //  Copyright © 2015 JRFS. All rights reserved.
 //
 
@@ -43,11 +43,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         initIcon()
         
         // Add items to menu
-        menu.addItem(NSMenuItem(title: "Print Quote", action: Selector("printQuote:"), keyEquivalent: "P"))
-        //menu.addItem(NSMenuItem.separatorItem())
+        menu.addItem(NSMenuItem(title: "About", action: Selector("aboutButton:"), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
-        
-        //statusItem.menu = menu
         
     }
     
@@ -164,6 +161,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         return true
         
+    }
+    
+    
+    func aboutButton(sender:AnyObject) {
+        NSApplication.sharedApplication().activateIgnoringOtherApps(true)
+        NSApplication.sharedApplication().orderFrontStandardAboutPanel(sender)
     }
 
 }

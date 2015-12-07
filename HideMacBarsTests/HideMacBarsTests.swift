@@ -2,7 +2,7 @@
 //  HideMacBarsTests.swift
 //  HideMacBarsTests
 //
-//  Created by JRFS on 04/12/2015.
+//  Created by Joao Fermoselle on 04/12/2015.
 //  Copyright © 2015 JRFS. All rights reserved.
 //
 
